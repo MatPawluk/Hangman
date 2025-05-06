@@ -1,0 +1,116 @@
+.hangman {
+	width: 300px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hangman-container {
+	position: relative;
+	height: 400px;
+	width: 200px;
+}
+
+.hangman-bar {
+	position: absolute;
+	left: -360px;
+	top: 0;
+}
+
+.hangman-part {
+	position: absolute;
+
+	&.head {
+		height: 150px;
+		top: 50px;
+		left: -25px;
+        z-index: 10;
+	}
+
+	&.corpus {
+		height: 150px;
+		top: 207px;
+		left: -4px;
+        z-index: 10;
+	}
+
+	&.neck {
+		height: 40px;
+		top: 180px;
+		left: 29px;
+        z-index: 1;
+	}
+
+	&.left-arm {
+		height: 100px;
+		top: 209px;
+		left: -73px;
+        z-index: 5;
+
+	}
+
+	&.right-arm {
+		height: 100px;
+		top: 212px;
+		left: 60px;
+        z-index: 5;
+
+	}
+
+	&.left-hand {
+		height: 27px;
+		top: 286px;
+		left: -77px;
+        z-index: 1;
+
+	}
+
+	&.right-hand {
+		height: 27px;
+		top: 286px;
+		left: 139px;
+        z-index: 1;
+
+	}
+
+	&.left-leg {
+		height: 150px;
+		top: 335px;
+		left: -30px;
+        z-index: 5;
+
+	}
+
+	&.right-leg {
+		height: 150px;
+		top: 335px;
+		left: 49px;
+        z-index: 5;
+
+	}
+
+	&.left-foot {
+		height: 25px;
+		top: 471px;
+		left: -57px;
+        z-index: 1;
+
+	}
+
+	&.right-foot {
+		height: 25px;
+		top: 471px;
+		left: 85px;
+        z-index: 1;
+	}
+}
+
+/* Show parts based on mistakes */
+.hangman-part.show {
+	display: block !important;
+}
+
+.hidden {
+	display: none;
+}

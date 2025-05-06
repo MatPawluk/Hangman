@@ -1,0 +1,15 @@
+---
+import Hangman from './Hangman.astro';
+---
+
+<div class="game-board">
+	<div class="game-panel">
+		<Hangman />
+		<div class="word-section">
+			<div class="missed-letters">
+				<h2>YOU MISSED:</h2>
+				<div id="missed-letters" class="missed-letters-container"></div>
+			</div>
+		</div>
+	</div>
+</div>

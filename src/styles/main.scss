@@ -1,0 +1,172 @@
+@use 'variables';
+@use 'fonts';
+@use 'hangman';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Aller Display', Arial, sans-serif;
+	background-color: variables.$primary-bg;
+	color: variables.$text-color;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-container {
+	width: 100%;
+	min-width: 1000px;
+	max-width: 1800px;
+	height: 800px;
+	padding: 2rem;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-shadow: variables.$box-shadow;
+}
+
+.game-board {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 2rem;
+}
+
+.game-panel {
+	display: flex;
+	flex-grow: 1;
+	margin-bottom: 2rem;
+}
+
+.word-section {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding-left: 2rem;
+}
+
+.missed-letters {
+	margin-bottom: 2rem;
+
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: variables.$secondary-bg;
+	}
+}
+
+.missed-letters-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	font-size: 3.5rem;
+	color: variables.$accent-color;
+	letter-spacing: 0.2rem;
+}
+
+.word-container {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: auto;
+	flex: 1;
+}
+
+.word-display {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
+}
+
+.letter-box {
+	width: 60px;
+	height: 60px;
+	background-color: variables.$secondary-bg;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: variables.$text-color;
+	border-radius: 4px;
+
+	&.filled {
+		background-color: variables.$primary-bg;
+	}
+}
+
+.game-over {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.game-over-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(52, 73, 94, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+
+	h1 {
+		font-size: 4rem;
+		margin-bottom: 2rem;
+		color: variables.$text-color;
+	}
+
+	.missed-letters-display {
+		font-size: 2.5rem;
+		color: variables.$accent-color;
+		margin-bottom: 3rem;
+		letter-spacing: 0.5rem;
+	}
+
+	.new-word-btn {
+		padding: 1rem 2rem;
+		background-color: transparent;
+		border: 2px dashed variables.$button-color;
+		color: variables.$button-color;
+		font-size: 1.5rem;
+		cursor: pointer;
+		border-radius: 50px;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: variables.$button-hover;
+		}
+	}
+}
+
+.bg-shape {
+	position: absolute;
+	top: 410px;
+	left: 100px;
+	width: 100%;
+	height: 100%;
+	background-color: variables.$accent-color;
+	clip-path: polygon(100% 0, 100% 100%,0 90%);
+}
+
+.hidden {
+	display: none;
+}
